@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card mb-3" style="width: 18rem;">
+                <img src="<%=hiking.image%>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%=hiking.title%>
+                    </h5>
+                    <p class="card-text">
+                        <%=hiking.description%>
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        Location: <%=hiking.location%>
+                    </li>
+                    <li class="list-group-item">Length: <%=hiking.lengthKM%> km</li>
+                    <li class="list-group-item">Hours: <%=hiking.hours%>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <form class="d-inline" action="/hiking/<%=hiking._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                    <a href="/hiking/<%=hiking._id%>/edit" class="card-link btn btn-warning">Edit</a>
+                </div>
+                <div class="card-footer">
+                    <a href="/hiking"> Show All Hiking Trails</a>
+                </div>
+            </div>
+        </div>
+    </div>

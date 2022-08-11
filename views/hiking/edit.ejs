@@ -1,0 +1,61 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">Edit Hiking Trail</h1>
+        <div class="col-6  offset-3">
+            <form class="needs-validation" action="/hiking/<%= hiking._id %>?_method=PUT" method="POST" novalidate>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input class="form-control" type="text" id="title" name="hiking[title]" value="<%= hiking.title %> "
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input class="form-control" type="text" id="location" name="hiking[location]"
+                        value="<%= hiking.location %> " required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="length" class="form-label">Total Trail Length (KM)</label>
+                    <input class="form-control" type="text" id="lengthKM" name="hiking[lengthKM]"
+                        value="<%= hiking.lengthKM %> " required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide the total length of this trail.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="hours" class="form-label">Hours</label>
+                    <input class="form-control" type="text" id="hours" name="hiking[hours]" value="<%= hiking.hours %> "
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image URL</label>
+                    <input class="form-control" type="text" id="image" name="hiking[image]" value="<%= hiking.image %> "
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="hiking[description]"
+                        required><%= hiking.description %></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <button class="btn btn-info">Update Hiking Trail</button>
+            </form>
+            <a href="/hiking" class="btn btn-primary mt-5"> Back to All Hiking Trails</a>
+        </div>
+    </div>

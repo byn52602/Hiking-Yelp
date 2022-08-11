@@ -1,0 +1,71 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">New Hiking Trail</h1>
+        <div class="col-6  offset-3">
+            <form class="needs-validation" action="/hiking" method="POST" novalidate>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input class="form-control" type="text" id="title" name="hiking[title]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide the title of this trail.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input class="form-control" type="text" id="location" name="hiking[location]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide the location of this trail.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="length" class="form-label">Total Trail Length (KM)</label>
+                    <input class="form-control" type="text" id="lengthKM" name="hiking[lengthKM]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide the total length of this trail.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="hours" class="form-label">Hours</label>
+                    <input class="form-control" type="text" id="hours" name="hiking[hours]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide the opening hours of this trail.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image URL</label>
+                    <input class="form-control" type="text" id="image" name="hiking[image]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide an image for this trail.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="hiking[description]"
+                        required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide a description for this trail.
+                    </div>
+                </div>
+                <button class="btn btn-success">Add Hiking Trail</button>
+            </form>
+            <a href="/hiking" class="btn btn-primary mt-5"> Back to All Hiking Trails</a>
+        </div>
+    </div>
