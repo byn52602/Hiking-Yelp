@@ -1,4 +1,5 @@
 const express = require("express")
+
 const catchAsync = require('../utils/catchAsync')
 const ExpressError = require('../utils/ExpressError')
 const Hiking = require('../models/Hiking');
@@ -24,6 +25,7 @@ router.post('/', validateReview, catchAsync(async (req, res) => {
     hiking.reviews.push(newReview);
     await newReview.save();
     await hiking.save();
+    req.flash('success', "Successfully added a new review!");
     res.redirect(`/hiking/${hiking._id}`)
 }))
 
@@ -31,6 +33,7 @@ router.delete('/:reviewId', catchAsync(async (req, res) => {
     const { id, reviewId } = req.params;
     await Hiking.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });
     await Review.findByIdAndDelete(reviewId);
+    req.flash('success', "Successfully deleted a review");
     res.redirect(`/hiking/${id}`)
 }))
 
