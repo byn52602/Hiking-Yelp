@@ -9,4 +9,11 @@ module.exports.hikingSchema = new Joi.object({
         image: Joi.string().required(),
         description: Joi.string().required()
     }).required()
-})   //This is NOT mongoose schema, this is EVNE before mongo db
+})   //This is NOT mongoose schema, this is EVEN before mongo db
+
+module.exports.reviewSchema = new Joi.object({
+    review: Joi.object({
+        rating: Joi.number().required().min(1).max(5),
+        body: Joi.string().required()
+    }).required()
+})
