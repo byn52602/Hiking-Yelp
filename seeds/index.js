@@ -1,10 +1,13 @@
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
 const mongoose = require('mongoose')
 // const cities = require('./cities')
 const Hiking = require('../models/Hiking')
 // const axios = require("axios")
 const trails = require("./trail")
 
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/hiking';
+const dbUrl = process.env.DB_URL;
 // const dbUrl = 'mongodb://localhost:27017/hiking'; //27017 is default port number. using test database
 async function main() {
     await mongoose.connect(dbUrl);
