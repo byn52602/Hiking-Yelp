@@ -20,7 +20,16 @@ const seedDB = async () => {
             title: `Hiking Trail ${i}`,
             location: `${cities[randomCity].city}, ${cities[randomCity].province_id}`,
             lengthKM: randomLength,
-            image: 'http://source.unsplash.com/collection/371513',
+            image: [
+                {
+                    url: 'https://res.cloudinary.com/dr57pfprz/image/upload/v1660524199/HikingYelp/dmalerljy9yjd2jt65b0.png',
+                    filename: 'HikingYelp/dmalerljy9yjd2jt65b0',
+                },
+                {
+                    url: 'https://res.cloudinary.com/dr57pfprz/image/upload/v1660524199/HikingYelp/kaxbxbsns95yaneqyb5e.jpg',
+                    filename: 'HikingYelp/kaxbxbsns95yaneqyb5e',
+                }
+            ],
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dignissimos quibusdam itaque eius necessitatibus, perferendis ab. Ipsum excepturi, praesentium at corporis beatae placeat pariatur voluptas eligendi numquam quae fuga obcaecati.",
             hours: "5am-5pm"
         })

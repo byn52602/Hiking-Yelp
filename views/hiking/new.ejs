@@ -2,7 +2,7 @@
     <div class="row">
         <h1 class="text-center">New Hiking Trail</h1>
         <div class="col-6  offset-3">
-            <form class="needs-validation" action="/hiking" method="POST" novalidate>
+            <form class="needs-validation" action="/hiking" method="POST" novalidate enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
                     <input class="form-control" type="text" id="title" name="hiking[title]" required>
@@ -43,16 +43,17 @@
                         Please provide the opening hours of this trail.
                     </div>
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="image" class="form-label">Image URL</label>
                     <input class="form-control" type="text" id="image" name="hiking[image]" required>
-                    <div class="valid-feedback">
+                    <div class="valid-feedback" name="image">
                         Looks good!
                     </div>
                     <div class="invalid-feedback">
                         Please provide an image for this trail.
                     </div>
-                </div>
+                </div> -->
+                <input type="file" name="image-file" multiple>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
                     <textarea class="form-control" type="text" id="description" name="hiking[description]"

@@ -8,7 +8,12 @@ const HikingSchema = new Schema({
     lengthKM: Number,
     hours: String,
     description: String,
-    image: String,
+    image: [
+        {
+            url: String,
+            filename: String
+        }
+    ],
     reviews: [
         {
             type: Schema.Types.ObjectId,

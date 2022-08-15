@@ -2,7 +2,8 @@
     <div class="row">
         <h1 class="text-center">Edit Hiking Trail</h1>
         <div class="col-6  offset-3">
-            <form class="needs-validation" action="/hiking/<%= hiking._id %>?_method=PUT" method="POST" novalidate>
+            <form class="needs-validation" enctype="multipart/form-data" action="/hiking/<%= hiking._id %>?_method=PUT"
+                method="POST" novalidate>
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
                     <input class="form-control" type="text" id="title" name="hiking[title]" value="<%= hiking.title %> "
@@ -39,12 +40,14 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="image" class="form-label">Image URL</label>
+                    <!-- <label for="image" class="form-label">Image URL</label>
                     <input class="form-control" type="text" id="image" name="hiking[image]" value="<%= hiking.image %> "
                         required>
                     <div class="valid-feedback">
                         Looks good!
-                    </div>
+                    </div> -->
+                    <label for="image" class="form-label">Add Images</label>
+                    <input type="file" name="image-file" id="image" multiple>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
