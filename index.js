@@ -35,7 +35,7 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, 'public')))
 
 
-const secret = process.env.SECRET || "notProductionSecret";
+const secret = process.env.SECRET || "notProductionSecret"; // heroku automatically adds this env var
 const store = MongoDBStore.create({
     mongoUrl: dbUrl,
     secret: secret,
@@ -86,6 +86,7 @@ app.use((err, req, res, next) => {
     res.status(err.statusCode).render('error', { err })
 })
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000!')
+const port = process.env.PORT || 3000; // heroku automatically adds this env var
+app.listen(port, () => {
+    console.log(`Listening on port ${port}!`)
 })
