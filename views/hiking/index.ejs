@@ -4,12 +4,7 @@
         <div class="card mb-3">
             <div class="row">
                 <div class="col-md-4">
-                    <%if(h.image.length) {%>
-                        <img class="img-fluid" alt="" src="<%=h.image[0].url%>">
-                        <% }else {%>
-                            <img class="img-fluid" alt=""
-                                src="https://res.cloudinary.com/dr57pfprz/image/upload/v1660527925/HikingYelp/photo-1660314002642-77bbfe3e9b48_rl4onj.jpg">
-                            <% } %>
+                    <img class="img-fluid" alt="" src="<%=h.image[0].url%>">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -18,9 +13,11 @@
                         </h5>
                         <p class="card-text">
                             <small class="text-muted">
-                                <%=h.location%>, <%=h.lengthKM%>km
+                                Location: <%=h.location%>
+                                    <br>
+                                    Total Length: <%=h.lengthKM%>km
                                         <br>
-                                        Opens: <%=h.hours%>
+                                        Difficulty: <%=h.difficulty%>
                             </small>
                         </p>
                         <p class="card-text">

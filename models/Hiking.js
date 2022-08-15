@@ -6,7 +6,7 @@ const HikingSchema = new Schema({
     title: String,
     location: String,
     lengthKM: Number,
-    hours: String,
+    difficulty: String,
     description: String,
     image: [
         {

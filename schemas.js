@@ -5,7 +5,7 @@ module.exports.hikingSchema = new Joi.object({
         title: Joi.string().required(),
         location: Joi.string().required(),
         lengthKM: Joi.number().required().min(0),
-        hours: Joi.string().required(),
+        difficulty: Joi.string().required(),
         // image: Joi.array().required(),
         description: Joi.string().required()
     }).required()
