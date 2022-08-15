@@ -1,39 +1,35 @@
 <% layout('layouts/boilerplate') %>
     <h1>All Hiking Trails</h1>
-    <div>
-        <a href="/hiking/new">Add New Hiking Trail</a>
-    </div>
-    <ul>
-        <% for (let h of hikings) { %>
-            <div class="card mb-3">
-                <div class="row">
-                    <div class="col-md-4">
-                        <%if(h.image.length) {%>
-                            <img class="img-fluid" alt="" src="<%=h.image[0].url%>">
-                            <% }else {%>
-                                <img class="img-fluid" alt=""
-                                    src="https://res.cloudinary.com/dr57pfprz/image/upload/v1660527925/HikingYelp/photo-1660314002642-77bbfe3e9b48_rl4onj.jpg">
-                                <% } %>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <%=h.title%>
-                            </h5>
-                            <p class="card-text">
-                                <small class="text-muted">
-                                    <%=h.location%>, <%=h.lengthKM%>km
-                                            <br>
-                                            Opens: <%=h.hours%>
-                                </small>
-                            </p>
-                            <p class="card-text">
-                                <%=h.description%>
-                                    <a class="btn btn-primary" href="/hiking/<%=h._id%>"> View</a>
-                        </div>
+    <% for (let h of hikings) { %>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <%if(h.image.length) {%>
+                        <img class="img-fluid" alt="" src="<%=h.image[0].url%>">
+                        <% }else {%>
+                            <img class="img-fluid" alt=""
+                                src="https://res.cloudinary.com/dr57pfprz/image/upload/v1660527925/HikingYelp/photo-1660314002642-77bbfe3e9b48_rl4onj.jpg">
+                            <% } %>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%=h.title%>
+                        </h5>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%=h.location%>, <%=h.lengthKM%>km
+                                        <br>
+                                        Opens: <%=h.hours%>
+                            </small>
+                        </p>
+                        <p class="card-text">
+                            <%=h.description%>
+                                <br>
+                                <a class="btn btn-primary" href="/hiking/<%=h._id%>"> View</a>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <%}%>
-    </ul>
+        <%}%>

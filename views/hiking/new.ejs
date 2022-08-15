@@ -2,7 +2,7 @@
     <div class="row">
         <h1 class="text-center">New Hiking Trail</h1>
         <div class="col-6  offset-3">
-            <form class="needs-validation" action="/hiking" method="POST" novalidate enctype="multipart/form-data">
+            <form class="needs-validation mb-3" action="/hiking" method="POST" novalidate enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
                     <input class="form-control" type="text" id="title" name="hiking[title]" required>
@@ -67,6 +67,6 @@
                 </div>
                 <button class="btn btn-success">Add Hiking Trail</button>
             </form>
-            <a href="/hiking" class="btn btn-primary mt-5"> Back to All Hiking Trails</a>
+            <a href="/hiking"> Back to All Hiking Trails</a>
         </div>
     </div>
