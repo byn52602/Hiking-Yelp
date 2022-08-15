@@ -22,12 +22,12 @@ const seedDB = async () => {
             lengthKM: randomLength,
             image: [
                 {
-                    url: 'https://res.cloudinary.com/dr57pfprz/image/upload/v1660524199/HikingYelp/dmalerljy9yjd2jt65b0.png',
-                    filename: 'HikingYelp/dmalerljy9yjd2jt65b0',
+                    url: 'https://res.cloudinary.com/dr57pfprz/image/upload/v1660529064/HikingYelp/photo-1660329492990-16ef9a699e51_iu9h3k.jpg',
+                    filename: 'HikingYelp/photo-1660329492990-16ef9a699e51_iu9h3k',
                 },
                 {
-                    url: 'https://res.cloudinary.com/dr57pfprz/image/upload/v1660524199/HikingYelp/kaxbxbsns95yaneqyb5e.jpg',
-                    filename: 'HikingYelp/kaxbxbsns95yaneqyb5e',
+                    url: 'https://res.cloudinary.com/dr57pfprz/image/upload/v1660529082/HikingYelp/photo-1587502537745-84b86da1204f_jxmoqb.jpg',
+                    filename: 'HikingYelp/photo-1587502537745-84b86da1204f_jxmoqb',
                 }
             ],
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dignissimos quibusdam itaque eius necessitatibus, perferendis ab. Ipsum excepturi, praesentium at corporis beatae placeat pariatur voluptas eligendi numquam quae fuga obcaecati.",

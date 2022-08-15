@@ -9,13 +9,17 @@ const ejsMate = require('ejs-mate');
 const path = require('path');
 const session = require('express-session')
 const flash = require("connect-flash")
+const MongoDBStore = require('connect-mongo');
 
 const ExpressError = require('./utils/ExpressError')
 const hikings = require('./routes/hiking')
 const reviews = require('./routes/review')
 
+
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/hiking';
+// const dbUrl = 'mongodb://localhost:27017/hiking'; //27017 is default port number. using test database
 async function main() {
-    await mongoose.connect('mongodb://localhost:27017/hiking'); //27017 is default port number. using test database
+    await mongoose.connect(dbUrl);
 }
 main().catch(err => console.log('Error!', err));
 main().then(() => console.log("Mongoose Connected!"))
@@ -30,14 +34,28 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, 'public')))
 
+
+const secret = process.env.SECRET || "notProductionSecret";
+const store = MongoDBStore.create({
+    mongoUrl: dbUrl,
+    secret: secret,
+    touchAfter: 24 * 3600 //avoid unnecessary updates whenever user refreshes a page
+});
+
+store.on("error", function (e) {
+    console.log("SESSION STORE ERROR", e)
+})
+
 const sessionConfig = {
-    secret: "notProductionSecret",
+    store: store,
+    name: 'session',
+    secret: secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,  //millisecond in a week
         maxAge: 1000 * 60 * 60 * 24 * 7,
-        HttpOnly: true //more security
+        httpOnly: true //more security
     }
 }
 app.use(session(sessionConfig))
